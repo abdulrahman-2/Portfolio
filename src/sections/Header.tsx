@@ -30,7 +30,7 @@ const Header = () => {
   const [activeLink, setActiveLink] = useState("/contact");
 
   return (
-    <div className="flex justify-center items-center fixed w-full top-3">
+    <div className="flex justify-center items-center fixed z-50 w-full top-3">
       <nav className="flex gap-1 bg-white/10 p-0.5 border border-white/15 rounded-full">
         {links.map((link) => (
           <a
