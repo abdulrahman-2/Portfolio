@@ -14,6 +14,7 @@ export const portfolioProjects = [
     ],
     link: "https://youtu.be/4k7IdSLxh6w",
     image: darkSaasLandingPage,
+    tag: ["All", "Design"],
   },
   {
     company: "Innovative Co",
@@ -26,6 +27,7 @@ export const portfolioProjects = [
     ],
     link: "https://youtu.be/7hi5zwO75yc",
     image: lightSaasLandingPage,
+    tag: ["All", "Design"],
   },
   {
     company: "Quantum Dynamics",
@@ -38,5 +40,6 @@ export const portfolioProjects = [
     ],
     link: "https://youtu.be/Z7I5uSRHMHg",
     image: aiStartupLandingPage,
+    tag: ["All", "Functional"],
   },
 ];

@@ -6,28 +6,28 @@ const links = [
   {
     id: 1,
     title: "Home",
-    url: "/",
+    url: "#hero",
   },
   {
     id: 3,
     title: "Projects",
-    url: "/projects",
+    url: "#projects",
   },
   {
     id: 2,
     title: "About",
-    url: "/about",
+    url: "#about",
   },
 
   {
     id: 4,
     title: "Contact",
-    url: "/contact",
+    url: "#contact",
   },
 ];
 
 const Header = () => {
-  const [activeLink, setActiveLink] = useState("/contact");
+  const [activeLink, setActiveLink] = useState("#hero");
 
   return (
     <div className="flex justify-center items-center fixed z-50 w-full top-3">
