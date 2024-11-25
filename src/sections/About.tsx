@@ -1,3 +1,5 @@
+"use client";
+
 import Card from "@/components/Card";
 import CardTitle from "@/components/CardTitle";
 import SectionTitle from "@/components/SectionTitle";
@@ -7,8 +9,11 @@ import { hobbies } from "@/data/AboutData";
 import mapImage from "@/assets/images/map.png";
 import smileMemoji from "@/assets/images/memoji-smile.png";
 import ToolboxItems from "@/components/ToolboxItems";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const About = () => {
+  const constrainRef = useRef<HTMLDivElement>(null);
   return (
     <div id="about" className="py-20 lg:py-28">
       <div className="container">
@@ -34,10 +39,10 @@ const About = () => {
                 title="My Toolbox"
                 description="Explore the technology and tools I use to craft exceptional digital experiences."
               />
-              <ToolboxItems />
+              <ToolboxItems itemWrapperClassName="animate-move-left [animation-duration:30s]" />
               <ToolboxItems
                 className="mt-6"
-                itemWrapperClassName="-translate-x-1/2"
+                itemWrapperClassName="-translate-x-1/2 animate-move-right [animation-duration:30s]"
               />
             </Card>
           </div>
@@ -48,21 +53,23 @@ const About = () => {
                 title="Beyond the Code"
                 description="Explore my interests and hobbies beyond the digital realm."
               />
-              <div className="relative flex-1">
+              <div className="relative flex-1" ref={constrainRef}>
                 {hobbies.map((hobby) => (
-                  <div
+                  <motion.div
                     key={hobby.title}
                     className="absolute inline-flex items-center gap-2 px-6 py-1.5 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400"
                     style={{
                       left: hobby.left,
                       top: hobby.top,
                     }}
+                    drag
+                    dragConstraints={constrainRef}
                   >
                     <span className="font-medium text-gray-950">
                       {hobby.title}
                     </span>
                     <div>{hobby.icon}</div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </Card>
@@ -75,12 +82,14 @@ const About = () => {
               />
               <div
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 
-                -translate-y-1/2 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400
+                -translate-y-1/2 rounded-full 
                 after:content-[''] after:absolute after:inset-0
                 after:rounded-full after:outline after:outline-2
               after:outline-gray-950/30 after:-outline-offset-2
               "
               >
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10"></div>
                 <Image src={smileMemoji} alt="Memoji" className="size-20" />
               </div>
             </Card>

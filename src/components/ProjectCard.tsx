@@ -4,9 +4,18 @@ import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import { Project } from "@/type/type";
 import Card from "./Card";
 
-const ProjectCard = ({ project }: { project: Project }) => {
+const ProjectCard = ({
+  project,
+  projectIndex,
+}: {
+  project: Project;
+  projectIndex: number;
+}) => {
   return (
-    <Card className="px-8 pt-8 pb-0 md:px-10 md:pt-12 lg:pt-16 lg:px-20">
+    <Card
+      className="px-8 pt-8 pb-0 md:px-10 md:pt-12 lg:pt-16 lg:px-20 sticky"
+      style={{ top: `calc(62px + ${projectIndex * 30}px)` }}
+    >
       <div className="lg:grid lg:grid-cols-2 lg:gap-16">
         <div className="lg:pb-16">
           <div className="text-sm inline-flex gap-2 bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent bg-clip-text">
@@ -30,7 +39,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </ul>
           <a href={project.link} target="_blank">
             <button
-              className="flex items-center mt-8 gap-2 bg-white w-full text-gray-950 h-12 rounded-xl font-semibold md:w-auto px-6
+              className="flex items-center justify-center mt-8 gap-2 bg-white w-full text-gray-950 h-12 rounded-xl font-semibold md:w-auto px-6
               hover:bg-gray-100 focus:ring-2 focus:ring-emerald-300 focus:outline-none"
             >
               <span>Visit Live Site</span>

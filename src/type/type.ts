@@ -27,3 +27,18 @@ export type Testimonial = {
   description: string;
   image: StaticImageData;
 };
+
+export type Orbit = {
+  size: number;
+  rotation: number;
+  orbitDuration?: number;
+  shouldOrbit?: boolean;
+  spinDuration?: number;
+  shouldSpin?: boolean;
+};
+
+export interface CardProps {
+  className?: string;
+  children?: React.ReactNode;
+  style?: React.CSSProperties;
+}

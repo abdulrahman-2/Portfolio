@@ -8,17 +8,14 @@ import { Project } from "@/type/type";
 import { useState } from "react";
 
 const Projects = () => {
-  {
-    /* remove comment after end */
-  }
-  // const [tag, setTag] = useState("All");
-  // const handleTagChange = (newTag: string) => {
-  //   setTag(newTag);
-  // };
+  const [tag, setTag] = useState("All");
+  const handleTagChange = (newTag: string) => {
+    setTag(newTag);
+  };
 
-  // const filteredProjects = portfolioProjects.filter((project) =>
-  //   project.tag.includes(tag)
-  // );
+  const filteredProjects = portfolioProjects.filter((project) =>
+    project.tag.includes(tag)
+  );
 
   return (
     <section className="pb-16 lg:py-24">
@@ -29,8 +26,7 @@ const Projects = () => {
           description="See how i transformed concepts into engaging digital experiences."
         />
 
-        {/* remove comment after end */}
-        {/* <div className="flex flex-wrap justify-center gap-2 mt-16">
+        <div className="flex flex-wrap justify-center gap-2 mt-16">
           <ProjectTag
             onClick={handleTagChange}
             name="All"
@@ -46,11 +42,15 @@ const Projects = () => {
             name="Functional"
             isSelected={tag === "Functional"}
           />
-        </div> */}
+        </div>
 
         <div className="flex flex-col gap-20 mt-10 md:mt-20">
-          {portfolioProjects.map((project: Project) => (
-            <ProjectCard key={project.title} project={project} />
+          {filteredProjects.map((project: Project, index) => (
+            <ProjectCard
+              key={project.title}
+              project={project}
+              projectIndex={index}
+            />
           ))}
         </div>
       </div>

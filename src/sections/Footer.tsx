@@ -17,6 +17,10 @@ const footerLinks = [
     title: "LinkedIn",
     href: "https://www.linkedin.com/in/abdulrahman-attallah-052888241?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
+  {
+    title: "Github",
+    href: "https://github.com/abdulrahman-2",
+  },
 ];
 
 const Footer = () => {
@@ -31,7 +35,7 @@ const Footer = () => {
           <div className="text-white/40">
             &copy; {new Date().getFullYear()}. All rights reserved.
           </div>
-          <nav className="flex flex-col items-center md:flex-row gap-8">
+          <nav className="flex flex-col items-center md:flex-row gap-8 md:gap-4 lg:gap-8">
             {footerLinks.map((link) => (
               <a
                 key={link.title}
