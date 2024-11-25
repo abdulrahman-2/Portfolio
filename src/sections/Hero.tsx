@@ -1,3 +1,5 @@
+"use client";
+
 import emojiImage from "@/assets/images/memoji-computer.png";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
 import Image from "next/image";
@@ -6,13 +8,24 @@ import HeroOrbit from "@/components/HeroOrbit";
 import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 
+const resumeFileUrl = "http://localhost:3000/abdulrahman-attallah-cv.pdf";
+
 const Hero = () => {
+  const downloadCV = () => {
+    const fileName = resumeFileUrl.split("/").pop() as string;
+    const link = document.createElement("a");
+    link.href = resumeFileUrl;
+    link.setAttribute("download", fileName);
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  };
   return (
     <section
       id="hero"
       className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip"
     >
-      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
+      <div className="absolute inset-0 -z-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div
           className="absolute inset-0 opacity-5 -z-30"
           style={{ backgroundImage: `url(${grainImage.src})` }}
@@ -132,7 +145,9 @@ const Hero = () => {
           </button>
           <button className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl">
             <span>👋</span>
-            <span className="font-semibold">{`Let's Connect`}</span>
+            <span className="font-semibold" onClick={downloadCV}>
+              Download CV
+            </span>
           </button>
         </div>
       </div>

@@ -3,6 +3,9 @@
 import Card from "@/components/Card";
 import SectionTitle from "@/components/SectionTitle";
 import React from "react";
+import toast from "react-hot-toast";
+
+const accessKey = process.env.WEB3FORMS_ACCESS_KEY as string;
 
 const Contact = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -10,21 +13,22 @@ const Contact = () => {
 
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+    formData.append("access_key", accessKey);
 
-    // Basic validation before sending the data
-    if (!data.name || !data.email || !data.subject || !data.message) {
-      alert("All fields are required!");
+    const data = Object.fromEntries(formData);
+
+    if (!data.name || !data.email || !data.message) {
+      toast.error("All fields are required!");
       return;
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email as string)) {
-      alert("Please enter a valid email address.");
+      toast.error("Please enter a valid email address.");
       return;
     }
 
     try {
-      const response = await fetch("/api/send", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,17 +37,16 @@ const Contact = () => {
       });
 
       const result = await response.json();
-
-      if (response.ok) {
-        alert("Message sent successfully!");
+      if (result.success) {
+        toast.success("Message sent successfully!");
+        form.reset();
       } else {
-        alert(`Error: ${result.error}`);
+        toast.error(`Error: ${result.error || "Something went wrong"}`);
       }
     } catch (error) {
-      alert("An error occurred while sending your message.");
+      console.error("Error:", error);
+      toast.error("An error occurred while sending your message.");
     }
-
-    form.reset();
   };
 
   return (
@@ -62,7 +65,7 @@ const Contact = () => {
                 <input
                   name="name"
                   type="text"
-                  placeholder="Your Name"
+                  placeholder="John Doe"
                   className="p-3 rounded-lg bg-gray-900 w-full mt-2 focus:outline outline-2 outline-white/40"
                 />
               </div>
@@ -76,19 +79,10 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="subject">Subject</label>
-                <input
-                  name="subject"
-                  type="text"
-                  placeholder="Subject"
-                  className="p-3 rounded-lg bg-gray-900 w-full mt-2 focus:outline outline-2 outline-white/40"
-                />
-              </div>
-              <div>
                 <label htmlFor="message">Message</label>
                 <textarea
                   name="message"
-                  placeholder="Message"
+                  placeholder="Write your message here..."
                   className="p-3 rounded-lg bg-gray-900 w-full mt-2 focus:outline outline-2 outline-white/40 resize-none h-32"
                 />
               </div>
