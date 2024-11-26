@@ -21,12 +21,12 @@ const Services = () => {
                 {services.map((service) => (
                   <Card
                     key={service.title}
-                    className="p-6 hover:rotate-3 transition duration-300"
+                    className="p-6 hover:rotate-3 transition duration-300 w-[350px] md:w-auto"
                   >
                     <div className="flex flex-col">
                       <div className="inline-flex items-center gap-2">
                         <StarIcon className="size-9 text-emerald-300" />
-                        <h3 className="font-serif text-2xl md:text-3xl">
+                        <h3 className="font-serif text-xl md:text-3xl">
                           {service.title}
                         </h3>
                       </div>
@@ -38,10 +38,10 @@ const Services = () => {
                       {service.details.map((detail) => (
                         <div
                           key={detail}
-                          className="flex gap-2 text-white md:text-base"
+                          className="flex gap-2 lg:gap-3 text-white"
                         >
                           <CheckIcon className="size-4 md:size-5" />
-                          <span className="text-sm">{detail}</span>
+                          <span className="text-sm lg:text-base">{detail}</span>
                         </div>
                       ))}
                     </div>

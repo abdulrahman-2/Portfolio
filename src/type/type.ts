@@ -1,6 +1,7 @@
 import { StaticImageData } from "next/image";
 
 export type Project = {
+  company: string;
   title: string;
   year: string;
   results: { title: string }[];

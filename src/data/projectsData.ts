@@ -41,7 +41,7 @@ export const portfolioProjects = [
     tag: ["All", "Design"],
   },
   {
-    company: "HooBank",
+    company: "HooBank Solutions",
     year: "2022",
     title: "HooBank Landing Page",
     results: [
@@ -55,8 +55,9 @@ export const portfolioProjects = [
   },
   // Functional Projects
   {
+    company: "Interactive Games Co.",
     title: "Dice Game",
-    year: "2024",
+    year: "2023",
     results: [
       { title: "Added multiplayer mode" },
       { title: "Enhanced visuals effects" },
@@ -67,6 +68,20 @@ export const portfolioProjects = [
     tag: ["All", "Functional"],
   },
   {
+    company: "Productivity Enhancers",
+    title: "Todo List",
+    year: "2023",
+    results: [
+      { title: "Simplified task tracking" },
+      { title: "Real-time sync added" },
+      { title: "Productivity insights" },
+    ],
+    link: "https://todo-list-seven-mu-32.vercel.app/",
+    image: todoListImage,
+    tag: ["All", "Functional"],
+  },
+  {
+    company: "Efficient Solutions",
     title: "Invoice App",
     year: "2023",
     results: [
@@ -79,6 +94,7 @@ export const portfolioProjects = [
     tag: ["All", "Functional"],
   },
   {
+    company: "EduTech Tools",
     title: "Quiz App",
     year: "2024",
     results: [
@@ -91,8 +107,9 @@ export const portfolioProjects = [
     tag: ["All", "Functional"],
   },
   {
+    company: "Social Connect Inc.",
     title: "Social App",
-    year: "2023",
+    year: "2024",
     results: [
       { title: "Real-time chat feature" },
       { title: "Boosted active users" },
@@ -103,6 +120,7 @@ export const portfolioProjects = [
     tag: ["All", "Functional"],
   },
   {
+    company: "Content Creators Hub",
     title: "Blog App",
     year: "2024",
     results: [
@@ -115,6 +133,7 @@ export const portfolioProjects = [
     tag: ["All", "Functional"],
   },
   {
+    company: "E-Commerce Masters",
     title: "Amazon Clone",
     year: "2024",
     results: [
@@ -124,18 +143,6 @@ export const portfolioProjects = [
     ],
     link: "https://amazon-v1-beta.vercel.app/",
     image: amazonCloneImage,
-    tag: ["All", "Functional"],
-  },
-  {
-    title: "Todo List",
-    year: "2024",
-    results: [
-      { title: "Simplified task tracking" },
-      { title: "Real-time sync added" },
-      { title: "Productivity insights" },
-    ],
-    link: "https://todo-list-seven-mu-32.vercel.app/",
-    image: todoListImage,
     tag: ["All", "Functional"],
   },
 ];

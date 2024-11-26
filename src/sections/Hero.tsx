@@ -146,11 +146,12 @@ const Hero = () => {
             <span className="font-semibold">Explore My Work</span>
             <ArrowDown className="size-4" />
           </a>
-          <button className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl">
+          <button
+            onClick={downloadCV}
+            className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl"
+          >
             <span>👋</span>
-            <span className="font-semibold" onClick={downloadCV}>
-              Download CV
-            </span>
+            <span className="font-semibold">Download CV</span>
           </button>
         </div>
       </div>

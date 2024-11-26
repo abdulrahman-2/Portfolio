@@ -5,7 +5,7 @@ import SectionTitle from "@/components/SectionTitle";
 import React from "react";
 import toast from "react-hot-toast";
 
-const accessKey = process.env.WEB3FORMS_ACCESS_KEY as string;
+const key = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY as string;
 
 const Contact = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -13,7 +13,7 @@ const Contact = () => {
 
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
-    formData.append("access_key", accessKey);
+    formData.append("access_key", key);
 
     const data = Object.fromEntries(formData);
 

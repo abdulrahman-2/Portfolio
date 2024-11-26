@@ -19,6 +19,7 @@ const ProjectCard = ({
       <div className="lg:grid lg:grid-cols-2 lg:gap-16">
         <div className="lg:pb-16">
           <div className="text-sm inline-flex gap-2 bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent bg-clip-text">
+            <span>{project.company}</span>
             <span>&bull;</span>
             <span>{project.year}</span>
           </div>
