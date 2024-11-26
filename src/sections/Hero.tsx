@@ -8,7 +8,7 @@ import HeroOrbit from "@/components/HeroOrbit";
 import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 
-const resumeFileUrl = "http://localhost:3000/abdulrahman-attallah-cv.pdf";
+const resumeFileUrl = `${process.env.NEXT_PUBLIC_RESUME_FILE_URL}/abdulrahman-attallah-cv.pdf`;
 
 const Hero = () => {
   const downloadCV = () => {
@@ -139,10 +139,13 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-8">
-          <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
+          <a
+            href="#projects"
+            className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl"
+          >
             <span className="font-semibold">Explore My Work</span>
             <ArrowDown className="size-4" />
-          </button>
+          </a>
           <button className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl">
             <span>👋</span>
             <span className="font-semibold" onClick={downloadCV}>

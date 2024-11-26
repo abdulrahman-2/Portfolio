@@ -14,7 +14,7 @@ const ProjectCard = ({
   return (
     <Card
       className="px-8 pt-8 pb-0 md:px-10 md:pt-12 lg:pt-16 lg:px-20 sticky"
-      style={{ top: `calc(62px + ${projectIndex * 30}px)` }}
+      style={{ top: `calc(62px + ${projectIndex * 25}px)` }}
     >
       <div className="lg:grid lg:grid-cols-2 lg:gap-16">
         <div className="lg:pb-16">

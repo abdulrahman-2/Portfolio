@@ -83,7 +83,7 @@ const Contact = () => {
                 <textarea
                   name="message"
                   placeholder="Write your message here..."
-                  className="p-3 rounded-lg bg-gray-900 w-full mt-2 focus:outline outline-2 outline-white/40 resize-none h-32"
+                  className="p-3 rounded-lg bg-gray-900 w-full mt-2 focus:outline outline-2 outline-white/40 resize-none h-36"
                 />
               </div>
               <button

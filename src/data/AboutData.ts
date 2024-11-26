@@ -12,7 +12,7 @@ import GitIcon from "@/assets/icons/git.svg";
 import GitHubIcon from "@/assets/icons/github.svg";
 import VscodeIcon from "@/assets/icons/vscode.svg";
 import FigmaIcon from "@/assets/icons/figma-svgrepo-com.svg";
-import VercelIcon from "@/assets/icons/vercel.svg";
+import VercelIcon from "@/assets/icons/vercel-original.svg";
 import PostmanIcon from "@/assets/icons/postman.svg";
 import ChromeIcon from "@/assets/icons/chrome.svg";
 
